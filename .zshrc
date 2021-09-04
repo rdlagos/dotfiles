@@ -8,12 +8,15 @@ ZSH_DISABLE_COMPFIX=true
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/rheiman/.oh-my-zsh"
+export NODE_PATH='/usr/local/lib/node_modules' # <--- add this ~/.bashrc
+export PATH=~/.local/bin:$PATH
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="ys"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -111,12 +114,11 @@ export PATH="$PATH:$HOME/Documents/Development/flutter/bin"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/13/bin/"
 
-export EDITOR='nvim'
+export EDITOR='lvim'
 export BROWSER='chrome'
 
-alias v='nvim'
-alias vi='nvim'
-alias vim='nvim'
+alias v='lvim'
+alias vi='lvim'
 
 alias python='python3'
 alias pip='pip3'
@@ -164,4 +166,18 @@ alias intel="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias ll="exa -l -g --icons"
 alias lla="ll -a"
 
+duck() {
+# lynx 'https://duckduckgo.com/lite/?q=' + $1
+  echo "hello $1" 
+  lynx "https://duckduckgo.com/lite/?q={$1}"
+}
+
+alias q="duck"
+
 alias tmux="tmux -u"
+
+alias c="clear"
+alias p="python"
+
+# vim mode for shrc
+#bindkey -v
